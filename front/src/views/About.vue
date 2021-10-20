@@ -16,12 +16,21 @@ export default {
 </script>
 
 <style scoped>
-
+@import url('https://fonts.googleapis.com/css2?family=Roboto:wght@400;700&display=swap');
 .name h1,span{
     /* background: linear-gradient(to right,#8EC5FC,#E0C3FC);
     -webkit-background-clip: text;
     -webkit-text-fill-color: transparent; */
-    color: yellow;
+    color: black;
     line-height: 20px;
+    font-size: 30px;
+    font-family: 'Roboto', sans-serif;
+}
+h1{
+    font-size: 45px !important;
+}
+.name{
+    margin-left: 100px;
+    margin-top: 100px;
 }
 </style>
