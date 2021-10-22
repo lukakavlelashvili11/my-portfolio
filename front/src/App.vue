@@ -1,15 +1,20 @@
 <template>
   <div id="app">
     <Header/>
-    <router-view/>
-    <div class="black-part">
+    <transition
+        name="fade"
+        mode="out-in"
+      >
+      <router-view/>
+    </transition>
+    <div class="black-part" @mouseenter="toggleMarquee">
       <div class="text">
-      <div class="marquee">
-        <span>
-        whsjvbsljfisdurgvbalstcjdfyalfyevmdhcjakiedsbnmfjsgfhaskdhvbclakshfytuierjsdhvnxosdjuhcskghfyegdsjfhdt
-        </span>
+        <div class="marquee" :class="!move ? 'pause' : 'play'">
+          <span>
+            whsjvbsljfisdurgvbalstcjdfyalfyevmdhcjakiedsbnmfjsgfhaskdhvbclakshfytuierjsdhvnxosdjuhcskghfyegdsjfhdt
+          </span>
         </div>
-        </div>
+      </div>
     </div>
   </div>
 </template>
@@ -20,6 +25,17 @@ export default {
   name: 'App',
   components:{
     Header
+  },
+  data(){
+    return{
+      move: false
+    }
+  },
+  methods:{
+    toggleMarquee(){
+      this.move = !this.move;
+      console.log(this.move);
+    }
   }
 }
 </script>
@@ -54,9 +70,21 @@ body{
   position: absolute;
   white-space: nowrap;
   will-change: transform;
-  animation: marquee 70s linear infinite;
+  -webkit-animation-play-state: paused;
+  -moz-animation-play-state: paused;
+  -o-animation-play-state: paused;
+  animation-play-state: paused;
+  -webkit-touch-callout: none;
+  -webkit-user-select: none;
+  -khtml-user-select: none;
+  -moz-user-select: none;
+  -ms-user-select: none;
+  user-select: none;
 }
 .black-part:hover .marquee{
+  animation: marquee 70s linear infinite;
+}
+.pause{
   -webkit-animation-play-state: paused;
     -moz-animation-play-state: paused;
     -o-animation-play-state: paused;
@@ -66,6 +94,18 @@ body{
 @keyframes marquee {
   from { transform: translateX(0); }
   to { transform: translateX(-50%); }
+}
+
+.fade-enter-active,
+.fade-leave-active {
+  transition-duration: .1s;
+  transition-property: opacity;
+  transition-timing-function: ease;
+}
+
+.fade-enter,
+.fade-leave-active {
+  opacity: 0
 }
 
 /* .text{
