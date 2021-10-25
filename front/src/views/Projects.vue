@@ -40,6 +40,6 @@ export default {
     object-fit: cover;
 }
 .project-desc{
-    background: white;
+    background: yellow;
 }
 </style>
