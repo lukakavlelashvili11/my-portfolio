@@ -27,19 +27,20 @@ export default {
     width: 40%;
 }
 .projects .project-item{
-    height: 460px;
+    height: 400px;
     width: 430px;
     display: grid;
     grid-template-rows: 60% 40%;
-    border-radius: 2px;
+    border-radius: 4px;
     overflow: hidden;
+    border: 1px solid black;
 }
 .project-image img{
     width: 100%;
-    height: 100%;
-    object-fit: cover;
+    /* height: 100%; */
+    /* object-fit: cover; */
 }
-.project-desc{
+/* .project-desc{
     background: white;
-}
+} */
 </style>
