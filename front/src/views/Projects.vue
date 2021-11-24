@@ -27,7 +27,7 @@ export default {
     width: 40%;
 }
 .projects .project-item{
-    height: 400px;
+    height: 350px;
     width: 430px;
     display: grid;
     grid-template-rows: 60% 40%;

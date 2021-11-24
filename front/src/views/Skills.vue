@@ -1,7 +1,7 @@
 <template>
   <div class="skills">
       <div class="skill-item" v-for="(skill,i) in skills" :key="i">
-        <img :src="require(`../assets/img/${skill}.svg`)"/>
+        <img :src="require(`../assets/img/${skill}.svg`)" :alt="skill"/>
       </div>
   </div>
 </template>
